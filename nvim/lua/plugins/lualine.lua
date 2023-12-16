@@ -7,6 +7,8 @@ return {
                 lualine_a = {
                     {
                         "buffers",
+                        show_modified_status = true,
+                        mode = 4,
                     }
                 }
             }
