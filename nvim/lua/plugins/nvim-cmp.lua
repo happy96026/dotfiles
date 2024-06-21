@@ -7,9 +7,12 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "nvim-lua/plenary.nvim",
+        "windwp/nvim-autopairs",
     },
     config = function()
         local cmp = require("cmp")
+        local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+
         local cmp_kinds = {
             Text = '',
             Method = '',
@@ -108,5 +111,7 @@ return {
             ),
             matching = { disallow_symbol_nonprefix_matching = false }
         })
+
+        cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end
 }

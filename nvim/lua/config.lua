@@ -43,6 +43,16 @@ if os.getenv("WSL_DISTRO_NAME") ~= nil then
     }
 end
 
--- vim.fn.sign_define("DiagnosticSignWarn", { text = "X", texthl="DiagnosticSignWarn", linehl = "", numhl = "" })
---
-
+vim.diagnostic.config {
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.HINT] = "",
+            [vim.diagnostic.severity.INFO] = "",
+        }
+    },
+    severity_sort = true,
+    virtual_text = false,
+    underline = true,
+}
