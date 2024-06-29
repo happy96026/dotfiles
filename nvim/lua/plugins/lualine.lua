@@ -31,5 +31,8 @@ return {
                 }
             }
         }
+        require("lualine").hide {
+            place = { "tabline" }
+        }
     end
 }
