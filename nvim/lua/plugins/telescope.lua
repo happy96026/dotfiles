@@ -23,11 +23,26 @@ return {
         vim.keymap.set("n", "gl", builtin.diagnostics, {})
 
         telescope.setup {
+            defaults = {
+                hidden = true,
+                file_ignore_patterns = { "%.git/" }
+            },
             extensions = {
                 ["ui-select"] = {
                     require("telescope.themes").get_dropdown {}
                 }
-            }
+            },
+            pickers = {
+                find_files = {
+                    hidden = true,
+                },
+                grep_string = {
+                    additional_args = { "--hidden" }
+                },
+                live_grep = {
+                    additional_args = { "--hidden" }
+                },
+            },
         }
         telescope.load_extension("ui-select")
     end,

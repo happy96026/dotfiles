@@ -1,3 +1,4 @@
+mkdir -p ~/.config
 ln -s "$(pwd)/nvim" ~/.config
 ln -s "$(pwd)/.tmux.conf" ~/.tmux.conf
 ln -s "$(pwd)/.zshrc" ~/.zshrc

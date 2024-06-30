@@ -106,7 +106,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim="nvim"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -121,4 +120,7 @@ export PATH="$DVM_DIR/bin:$PATH"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+alias vim="nvim"
+alias auth='eval $(keychain --eval id_ed25519)'
 alias cf='cd $(fzf)'
+
