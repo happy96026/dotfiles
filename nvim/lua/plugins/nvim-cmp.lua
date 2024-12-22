@@ -51,7 +51,7 @@ return {
                 c = cmp.mapping.abort()
             },
             ["<tab>"] = {
-                c = cmp.mapping.confirm({ select = false }) -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                c = cmp.mapping.confirm({ select = false }) -- Set `select` to `true` to confirm the first item in list when no items are selected.
             },
         }
 
@@ -68,7 +68,7 @@ return {
                 ["<C-d>"] = cmp.mapping.scroll_docs(4),
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-e>"] = cmp.mapping.abort(),
-                ["<tab>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                ["<tab>"] = cmp.mapping.confirm({ select = false }), -- Set `select` to `true` to confirm the first item in list when no items are selected.
             }),
             completion = {
                 completeopt = "menu,menuone,noinsert"

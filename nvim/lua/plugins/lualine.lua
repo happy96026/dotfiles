@@ -26,13 +26,10 @@ return {
                     {
                         "buffers",
                         show_modified_status = true,
-                        mode = 4,
+                        mode = 2,
                     }
                 }
             }
-        }
-        require("lualine").hide {
-            place = { "tabline" }
         }
     end
 }
