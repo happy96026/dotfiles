@@ -10,15 +10,21 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>w", vim.cmd.write)
 vim.keymap.set("n", "<leader>bd", function ()
+    vim.cmd.bprev()
+
     local bufs = vim.iter(vim.api.nvim_list_bufs()):filter(function(buf)
         return vim.api.nvim_buf_get_option(buf, "buflisted")
     end):totable()
+    local bufName
 
-    vim.cmd.bprev()
     if size(bufs) > 1 then
-        vim.cmd.bdelete("#")
-    else
-        vim.cmd.bdelete()
+        bufName = "#"
+    end
+
+    local success, err = pcall(function() vim.cmd.bdelete(bufName) end)
+    if not success then
+        vim.cmd.bnext()
+        error(err)
     end
 end)
 vim.keymap.set({ "n", "v" }, "<leader>gp", "\"+p")
