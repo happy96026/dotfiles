@@ -11,6 +11,7 @@ vim.opt.colorcolumn = "120"
 vim.opt.clipboard = "unnamedplus"
 vim.opt.signcolumn = "yes:2"
 vim.opt.cursorline = true
+vim.opt.splitright = true
 
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
