@@ -16,6 +16,7 @@ return {
         vim.keymap.set({ "n", "v" }, "<leader>fs", builtin.grep_string, {})
         vim.keymap.set({ "n", "v" }, "<leader>fb", builtin.buffers, {})
         vim.keymap.set({ "n", "v" }, "<leader>ws", builtin.lsp_workspace_symbols, {})
+        vim.keymap.set({ "n", "v" }, "<leader>gs", builtin.git_status, {})
         vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
         vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
         vim.keymap.set("n", "gD", builtin.lsp_type_definitions, {})

@@ -8,7 +8,13 @@ return {
     config = function()
         require("mason").setup()
         require("mason-lspconfig").setup {
-            ensure_installed = { "tsserver", "lua_ls", "dockerls" },
+            ensure_installed = {
+                "dockerls",
+                "eslint",
+                "lua_ls",
+                "prettier",
+                "tsserver",
+            },
         }
 
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
