@@ -12,34 +12,39 @@ return {
                 "dockerls",
                 "eslint",
                 "lua_ls",
-                "prettier",
                 "tsserver",
             },
         }
 
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
         local lsp_setup_table_by_name = {
             lua_ls = {
-                capabilities = capabilities,
                 settings = {
                     Lua = {
                         diagnostics = {
-                            globals = { "vim" }
-                        }
-                    }
-                }
-            }
+                            globals = { "vim" },
+                        },
+                    },
+                },
+            },
+            ts_ls = {
+                init_options = {
+                    preferences = {
+                        importModuleSpecifierPreference = "non-relative",
+                    },
+                },
+            },
         }
 
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
         require("mason-lspconfig").setup_handlers {
             function(server_name)
-                if lsp_setup_table_by_name[server_name] ~= nil then
-                    require("lspconfig").lua_ls.setup(lsp_setup_table_by_name[server_name])
-                else
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities
-                    }
+                local lsp_setup_table = lsp_setup_table_by_name[server_name]
+                if lsp_setup_table == nil then
+                    lsp_setup_table = {}
                 end
+                lsp_setup_table.capabilities = capabilities
+
+                require("lspconfig")[server_name].setup(lsp_setup_table)
             end,
         }
     end,
