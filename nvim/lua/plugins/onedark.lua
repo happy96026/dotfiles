@@ -30,6 +30,10 @@ return {
         vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = colors.bg3 })
         vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = colors.bg3 })
         vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = colors.bg3 })
+
+        -- Prioritize Treesitter highlighting over LSP higlighting
+        vim.highlight.priorities.semantic_tokens = 95
+
     end,
 }
 
