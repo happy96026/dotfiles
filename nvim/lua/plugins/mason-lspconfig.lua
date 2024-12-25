@@ -32,6 +32,13 @@ return {
                         importModuleSpecifierPreference = "non-relative",
                     },
                 },
+                settings = {
+                    typescript = {
+                        format = {
+                            semicolons = "remove",
+                        },
+                    },
+                },
             },
         }
 
