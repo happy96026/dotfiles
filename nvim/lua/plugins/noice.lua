@@ -18,7 +18,7 @@ return {
                 lsp_doc_border = false, -- add a border to hover docs and signature help
             },
             popupmenu = {
-                enabled = false,
+                enabled = true,
             }
         }
 
@@ -38,6 +38,7 @@ return {
         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
         "MunifTanjim/nui.nvim",
         "hrsh7th/nvim-cmp",
+        "rcarriga/nvim-notify",
     }
 }
 

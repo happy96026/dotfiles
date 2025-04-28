@@ -12,7 +12,7 @@ return {
                 "dockerls",
                 "eslint",
                 "lua_ls",
-                "tsserver",
+                "ts_ls",
             },
         }
 

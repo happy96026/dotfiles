@@ -1,32 +1,8 @@
-local function size(table)
-    local count = 0
-    for _ in pairs(table) do
-        count = count + 1
-    end
-    return count
-end
-
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>ex", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>w", vim.cmd.write)
-vim.keymap.set("n", "<leader>bd", function ()
-    vim.cmd.bprev()
-
-    local bufs = vim.iter(vim.api.nvim_list_bufs()):filter(function(buf)
-        return vim.api.nvim_buf_get_option(buf, "buflisted")
-    end):totable()
-    local bufName
-
-    if size(bufs) > 1 then
-        bufName = "#"
-    end
-
-    local success, err = pcall(function() vim.cmd.bdelete(bufName) end)
-    if not success then
-        vim.cmd.bnext()
-        error(err)
-    end
-end)
+vim.keymap.set("n", "<leader>q", vim.cmd.quit)
+vim.keymap.set("n", "<leader>bd", vim.cmd.bdelete)
 vim.keymap.set({ "n", "v" }, "<leader>gp", "\"+p")
 vim.keymap.set({ "n", "v" }, "<leader>gy", "\"+y")
 vim.keymap.set({ "n", "v" }, "<leader>bn", vim.cmd.bnext)

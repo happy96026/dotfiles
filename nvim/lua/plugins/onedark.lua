@@ -8,7 +8,6 @@ return {
         }
         onedark.load()
 
-        local colors = require('onedark.colors')
         -- gray
         vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg = 'NONE', strikethrough = true, fg = '#808080' })
         -- blue
@@ -26,14 +25,6 @@ return {
 
         vim.api.nvim_set_hl(0, 'CmpItemKindProperty', { link = 'CmpItemKindKeyword' })
         vim.api.nvim_set_hl(0, 'CmpItemKindUnit', { link = 'CmpItemKindKeyword' })
-
-        vim.api.nvim_set_hl(0, "IlluminatedWordText", { bg = colors.bg3 })
-        vim.api.nvim_set_hl(0, "IlluminatedWordRead", { bg = colors.bg3 })
-        vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = colors.bg3 })
-
-        -- Prioritize Treesitter highlighting over LSP higlighting
-        vim.highlight.priorities.semantic_tokens = 95
-
     end,
 }
 

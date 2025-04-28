@@ -4,32 +4,37 @@ return {
         "nvim-tree/nvim-web-devicons",
     },
     config = function()
+        local winbar_config = {
+            lualine_a = {
+                {
+                    "filetype",
+                    colored = false,
+                    icon_only = true,
+                    component_separators = { right = "" },
+                },
+                {
+                    "filename",
+                    path = 1,
+                    padding = { left = 0, right = 1 },
+                    file_status = false,
+                    symbols = {
+                        modified = " ●",
+                        readonly = "[-]",
+                        unnamed = "[No Name]",
+                        newfile = "[New]",
+                    },
+                },
+            },
+        }
         require("lualine").setup {
+            options = {
+                globalstatus = true,
+            },
             sections = {
-                lualine_c = {
-                    {
-                        "filename",
-                        path = 1,
-                    }
-                },
+                lualine_c = {},
             },
-            inactive_sections = {
-                lualine_c = {
-                    {
-                        "filename",
-                        path = 1,
-                    }
-                },
-            },
-            tabline = {
-                lualine_a = {
-                    {
-                        "buffers",
-                        show_modified_status = true,
-                        mode = 2,
-                    }
-                }
-            }
+            winbar = winbar_config,
+            inactive_winbar = winbar_config,
         }
     end
 }
