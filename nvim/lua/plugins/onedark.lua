@@ -7,6 +7,10 @@ return {
             style = 'dark',
         }
         onedark.load()
+        local base_statusline_highlights = {'StatusLine', 'StatusLineNC', 'Tabline', 'TabLineFill', 'TabLineSel', 'Winbar', 'WinbarNC'}
+        for _, hl_group in pairs(base_statusline_highlights) do
+            vim.api.nvim_set_hl(0, hl_group, { bg = 'none' })
+        end
 
         -- gray
         vim.api.nvim_set_hl(0, 'CmpItemAbbrDeprecated', { bg = 'NONE', strikethrough = true, fg = '#808080' })

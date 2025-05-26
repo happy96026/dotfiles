@@ -19,7 +19,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 # Install ripgrep (required for telescope live grep)
 sudo apt install ripgrep
 
-# Install luarocks
+# Install lua
 sudo apt install build-essential libreadline-dev unzip
 curl -LO http://www.lua.org/ftp/lua-5.3.5.tar.gz
 tar -zxf lua-5.3.5.tar.gz
