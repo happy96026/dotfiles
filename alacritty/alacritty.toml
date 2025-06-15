@@ -1,0 +1,16 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/one_dark.toml"
+]
+
+[terminal]
+shell = "/usr/bin/zsh"
+
+[font]
+normal = { family = "MesloLGMDZ Nerd Font Mono" }
+bold = { family = "MesloLGMDZ Nerd Font Mono" }
+italic = { family = "MesloLGMDZ Nerd Font Mono" }
+bold_italic = { family = "MesloLGMDZ Nerd Font Mono" }
+size = 12
+offset = { x = -1 }
+builtin_box_drawing = false
