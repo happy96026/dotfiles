@@ -10,10 +10,13 @@ return {
 
         vim.keymap.set({ "n", "v" }, "<C-p>", builtin.find_files, {})
         vim.keymap.set({ "n", "v" }, "<C-O>", builtin.lsp_document_symbols, {})
+        vim.keymap.set({ "n", "v" }, "<leader>ft", builtin.builtin, {})
         vim.keymap.set({ "n", "v" }, "<leader>fg", builtin.live_grep, {})
         vim.keymap.set({ "n", "v" }, "<leader>ff", builtin.git_files, {})
         vim.keymap.set({ "n", "v" }, "<leader>fs", builtin.grep_string, {})
         vim.keymap.set({ "n", "v" }, "<leader>fb", builtin.buffers, {})
+        vim.keymap.set({ "n", "v" }, "<leader>fm", builtin.marks, {})
+        vim.keymap.set({ "n", "v" }, "<leader>fr", builtin.resume, {})
         vim.keymap.set({ "n", "v" }, "<leader>ws", builtin.lsp_workspace_symbols, {})
         vim.keymap.set({ "n", "v" }, "<leader>gs", builtin.git_status, {})
         vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
@@ -25,12 +28,20 @@ return {
         telescope.setup {
             defaults = {
                 hidden = true,
-                file_ignore_patterns = { "%.git/" }
+                file_ignore_patterns = { "%.git/" },
+                sorting_strategy = 'ascending',
+                layout_config = {
+                    prompt_position = "top",
+                    height = 0.7,
+                },
+                cache_picker = {
+                    num_pickers = 10,
+                },
             },
             extensions = {
-                ["ui-select"] = {
-                    require("telescope.themes").get_dropdown {}
-                }
+                -- ["ui-select"] = {
+                --     require("telescope.themes").get_dropdown {}
+                -- },
             },
             pickers = {
                 find_files = {
