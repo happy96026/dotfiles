@@ -16,9 +16,9 @@ return {
                     "filename",
                     path = 1,
                     padding = { left = 0, right = 1 },
-                    file_status = false,
+                    file_status = true,
                     symbols = {
-                        modified = " ●",
+                        modified = "●",
                         readonly = "[-]",
                         unnamed = "[No Name]",
                         newfile = "[New]",
