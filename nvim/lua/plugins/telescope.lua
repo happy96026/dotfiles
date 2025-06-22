@@ -32,10 +32,10 @@ return {
                 sorting_strategy = 'ascending',
                 layout_config = {
                     prompt_position = "top",
-                    height = 0.7,
-                },
-                cache_picker = {
-                    num_pickers = 10,
+                    height = 0.5,
+                    width = { 0.5, min = 200 },
+                    preview_cutoff = 200,
+                    preview_width = 0.6,
                 },
             },
             extensions = {
