@@ -17,6 +17,7 @@ return {
         vim.keymap.set({ "n", "v" }, "<leader>fb", builtin.buffers, {})
         vim.keymap.set({ "n", "v" }, "<leader>fm", builtin.marks, {})
         vim.keymap.set({ "n", "v" }, "<leader>fr", builtin.resume, {})
+        vim.keymap.set({ "n", "v" }, "<leader>fj", builtin.jumplist, {})
         vim.keymap.set({ "n", "v" }, "<leader>ws", builtin.lsp_workspace_symbols, {})
         vim.keymap.set({ "n", "v" }, "<leader>gs", builtin.git_status, {})
         vim.keymap.set("n", "gi", builtin.lsp_implementations, {})
