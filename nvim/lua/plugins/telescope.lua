@@ -9,7 +9,7 @@ return {
         local telescope = require("telescope")
 
         vim.keymap.set({ "n", "v" }, "<C-p>", builtin.find_files, {})
-        vim.keymap.set({ "n", "v" }, "<C-O>", builtin.lsp_document_symbols, {})
+        vim.keymap.set({ "n", "v" }, "<leader>fo", builtin.lsp_document_symbols, {})
         vim.keymap.set({ "n", "v" }, "<leader>ft", builtin.builtin, {})
         vim.keymap.set({ "n", "v" }, "<leader>fg", builtin.live_grep, {})
         vim.keymap.set({ "n", "v" }, "<leader>ff", builtin.git_files, {})
@@ -38,11 +38,6 @@ return {
                     preview_cutoff = 200,
                     preview_width = 0.6,
                 },
-            },
-            extensions = {
-                -- ["ui-select"] = {
-                --     require("telescope.themes").get_dropdown {}
-                -- },
             },
             pickers = {
                 find_files = {
