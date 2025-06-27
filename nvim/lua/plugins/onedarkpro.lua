@@ -10,11 +10,17 @@ return {
                 IlluminatedWordText = { bg = hover_color },
                 IlluminatedWordRead = { bg = hover_color },
                 IlluminatedWordWrite = { bg = hover_color },
-                ["@function.builtin"] = { fg = "${blue}" },
-                ["@lsp.typemod.property.readonly.typescript"] = { link = "@property" },
-                ["@parameter"] = { fg = "${red}" },
                 ["@punctuation.special"] = { fg = "${purple}" },
-                ["@type.typescript"] = { fg = "${red}" },
+                ["@punctuation.bracket.typescript"] = { fg = "${white}" },
+                ["@function.builtin"] = { fg = "${blue}" },
+                ["@parameter"] = { fg = "${yellow}" },
+                ["@lsp.type.variable.typescript"] = { fg = "${white}" },
+                ["@lsp.typemod.variable.readonly.typescript"] = { link = "@lsp.type.variable.typescript" },
+                ["@lsp.typemod.property.readonly.typescript"] = { link = "@property" },
+                ["@lsp.typemod.property.defaultLibrary.typescript"] = { link = "@property" },
+                -- ["@lsp.typemod.parameter.declaration.typescript"] = { fg = "${yellow}" },
+                -- ["@punctuation.typescript"] = { fg = "${red}" },
+                -- ["@type.typescript"] = { fg = "${red}" },
             }
         })
         vim.cmd("colorscheme onedark")
